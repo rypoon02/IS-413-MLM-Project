@@ -33,6 +33,8 @@ public class DigitReader {
     private static final int DIM_PIXEL_SIZE = 1;
     private static final int BYTE_SIZE_OF_FLOAT = 4;
 
+    private float confidece;
+
     //Constructor to initialize interpreter and buffer
     public DigitReader(Activity activity) {
         try {
@@ -93,7 +95,14 @@ public class DigitReader {
                 maxIndex = i;
             }
             Log.d(TAG, "Output for " + i + ": " + mnistOutput[0][i]);
+        confidece = maxValue;
         }
         return maxIndex;
     }
+
+    public float getConfidece()
+    {
+        return confidece;
+    }
+
 }
