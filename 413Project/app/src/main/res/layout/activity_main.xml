@@ -1,0 +1,122 @@
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/umbc_background"
+        android:padding="16dp">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true">
+
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="506dp"
+                android:layout_height="83dp"
+                app:srcCompat="@drawable/textbox_1"
+                android:layout_gravity="center" />
+
+        <TextView
+                android:id="@+id/correct_guesses_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correct:0"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_gravity="start|center_vertical"
+                android:translationX="50dp" />
+
+        <TextView
+                android:id="@+id/incorrect_guesses_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incorrect:0"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_gravity="end|center_vertical"
+                android:translationX="-50dp" />
+    </FrameLayout>
+
+    <com.nex3z.fingerpaintview.FingerPaintView
+            android:id="@+id/finger_paint_view"
+            android:layout_width="391dp"
+            android:layout_height="391dp"
+            android:background="@drawable/fingerpaint_border"
+            android:layout_below="@id/correct_guesses_text"
+            android:layout_marginTop="90dp" tools:ignore="NotSibling"/>
+
+    <LinearLayout
+            android:id="@+id/button_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_below="@id/finger_paint_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+
+        <Button
+                android:id="@+id/correct_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Correct" />
+
+        <Button
+                android:id="@+id/incorrect_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Incorrect" />
+    </LinearLayout>
+
+    <FrameLayout
+            android:id="@+id/overlap_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+
+        <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/textbox_2" />
+
+        <TextView
+                android:id="@+id/target_digit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Draw the Digit: 0"
+                android:textSize="25sp"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:layout_gravity="center" />
+    </FrameLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/robot_image"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:src="@drawable/robot_normal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp" />
+
+    <Button
+            android:id="@+id/detect_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detect"
+            android:layout_below="@id/finger_paint_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+</RelativeLayout>
